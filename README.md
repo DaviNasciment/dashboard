@@ -4,10 +4,15 @@
 
 [Ambiente de Produção](https://dashboard-one-one.vercel.app/)
 
-> Painel
+Painel
 
+> login: 4dmin
+
+> senha: 1234
+
+[Ambiente de Produção](https://dashboard-one-one.vercel.app/painel)
 ![Dashboard](https://user-images.githubusercontent.com/85085103/174353406-d4599e22-ec95-4604-9ce4-55766d70df49.png)
-  
+ 
 ## Tecnologia
 
 * HTML5
