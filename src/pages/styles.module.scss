@@ -1,0 +1,75 @@
+.background {
+    display: table;
+    background-image: url(../../public/images/mountainsnow.png);
+    background-size: cover;
+
+    height: calc(100% - .5rem);
+    width: 100%;
+}
+.section {
+    min-height: 50rem;
+    max-width: 1120px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .card {
+        max-width: 320px;
+        height: 32rem;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0px 0px 15px 0px #9b9b9b;
+        border-radius: .2rem;
+        margin-bottom: 5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        backdrop-filter: blur(15px);
+
+        cursor: pointer;
+
+        .content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .contentBx {
+                text-align: center;
+            }
+        }
+        
+        .imgBx{
+            padding: 2rem;
+            padding-bottom: 1rem;
+           
+            img {
+                height: 200px;
+                width: 200px;
+                border-radius: 23rem;
+                object-fit: cover;
+                border: 10px solid rgba(0, 0, 0, 0.124);
+            } 
+        }
+
+        .flags {
+
+            img {
+                height: auto;
+                width: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section {
+        justify-content: center;
+    }
+}

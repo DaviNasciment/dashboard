@@ -1,0 +1,72 @@
+.addNote {
+    display: flex;
+    margin-left: auto;
+
+    overflow: hidden;
+
+    .form {    
+        .inputAddNote {
+            padding: 0.5rem;
+            padding-top: 0;
+            margin-right: 1rem;
+    
+            font-size: 16px;
+            color: #000;
+            border: none;
+            border-bottom: 1px solid #000;
+            outline: none;
+            background: transparent;
+        }
+    
+        button {
+            padding: 0.5rem;
+            padding-top: 0.5rem;
+            font-size: 16px;
+            color: #000;
+            border: none;
+            border-bottom: 1px solid #000!important;
+            outline: none;
+            background: transparent;
+        }
+    }
+
+    .AddNoteEdit {
+        
+        button {
+            border: none;
+
+            user-select: none;
+            background: transparent;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .addNote {
+        margin: 0;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: space-between;
+        
+
+        .editDown {
+            position: relative;
+            opacity: 1!important;
+    
+            left: 10px;
+            top: 0;
+            margin-bottom: 1rem;
+
+            button {
+                margin-top: 1rem;
+            }
+        }
+        .editUp {
+            position: relative;
+            opacity: 0!important;
+    
+            left: -55px;
+            top: 0;
+        }
+    }
+}

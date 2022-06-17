@@ -1,0 +1,83 @@
+.titleCard {
+    margin-bottom: 2rem;
+}
+.cardContainers {
+    .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        position: relative;
+        
+        background: white;
+
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 26px 0px #6868681c;
+    
+        overflow: hidden;
+        
+        .nameAndCargo {
+            cursor: pointer;
+
+            h3 {
+                transition: all 0.1s ease-in-out;
+            }
+            h3:hover {
+                color: #737373;
+            }
+        }
+        
+    
+        img {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            object-fit: cover;
+    
+            margin-right: 1rem;
+        } 
+
+        .deleteCard {
+            display: flex;
+            margin-left: auto;
+            
+            button {
+                background: transparent;
+                border: none;
+
+                svg {
+                    transition: all 0.1s ease-in-out;
+                    
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+            }
+        }
+
+
+        .openMenuCard {
+            opacity: 1;
+            transition: all 0.1s ease-in-out;
+        }
+        &:hover {
+            svg {
+                opacity: 1;
+            }
+        }
+        svg {
+            cursor: pointer;
+            opacity: 0;
+            
+            fill: #404040;
+            font-size: 1.3rem;
+        }
+    }
+    
+    
+}
+@media screen and (max-width: 800px) {
+
+}

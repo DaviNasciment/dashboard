@@ -1,0 +1,128 @@
+.section {
+    display: flex;
+
+    .editDown {
+        opacity: 1!important;
+
+        top: 4px!important;
+        margin-bottom: 1rem;
+    }
+    .editUp {
+        opacity: 0!important;
+
+        top: -50px;
+    }
+    .form {
+        position: absolute;
+        top: -50px;
+
+        padding: 1rem;
+        opacity: 0;
+        background: #fff;
+        border-radius: 0.1rem;
+        margin-bottom: 1rem;
+
+        transition: all 0.3s ease-in-out;
+
+        .inputSendFiles {
+            margin-bottom: 1rem;
+
+            &.inputSendFiles::-webkit-file-upload-button {
+                visibility: hidden;
+            }
+            &.inputSendFiles::before {
+                content: 'Abrir';
+                display: inline-block;
+                border: 1px solid #999;
+                border-radius: 3px;
+                padding: 5px 8px;
+                margin-right: -130px;
+                outline: none;
+                white-space: nowrap;
+                -webkit-user-select: none;
+                cursor: pointer;
+                text-shadow: 1px 1px #fff;
+                font-weight: 700;
+                font-size: 10pt;
+            }
+            &.inputSendFiles:hover::before {
+                border-color: black;
+            }
+        }
+    
+        .inputAddDocs {
+            padding: 0.8rem;
+            padding-top: 0;
+            margin-right: 1rem;
+    
+            font-size: 16px;
+            color: #000;
+            border: none;
+            border-bottom: 1px solid #000;
+            outline: none;
+            background: transparent;
+        }
+    
+        button {
+            padding: 0.8rem;
+            padding-top: 0;
+            font-size: 16px;
+            color: #000;
+            border: none;
+            border-bottom: 1px solid #000;
+            outline: none;
+            background: transparent;
+        }
+    }
+
+
+    .addDocsEdit {
+        display: flex;
+        align-items: center;
+        min-height: 0.8rem;
+        justify-content: flex-end;
+
+        margin-bottom: 3.8rem;
+        margin-left: auto;
+
+        svg {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .section {
+
+        .form {
+            position: fixed;
+
+            height: 12rem;
+            z-index: 5;
+            box-shadow: 0px 0px 9px -4px black;
+            bottom: 0;
+            left: 0;
+
+        }
+        .editDown {
+            opacity: 1!important;
+            
+            top: auto;
+            left: 0;
+            bottom: 0;
+            margin: 0;
+    
+            transition: all 0.3s ease-in-out;
+        }
+        .editUp {
+            opacity: 0!important;
+            
+            top: auto;
+            left: 0;
+            bottom: -50px;
+    
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
