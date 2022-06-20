@@ -1,65 +1,32 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { db } from '../services/firebase'
-import {collection, onSnapshot} from 'firebase/firestore';
+import { AddDocs } from '../components/AddDocs';
+import { GetDocs } from '../components/GetDocs';
+import { InfoBar } from '../components/InfoBar';
+import { BsRecordCircleFill } from 'react-icons/bs';
 
 import styles from './styles.module.scss';
-import { Footer } from '../components/Footer';
 
-interface funcionariosProps {
-  id: string,
-  image: string,
-  nome: string,
-  cargo: string,
-}
-
-export default function Home() {
-  const databaseRef = collection(db, 'usuarios');
-  const [cadastros, setCadastros] = useState<funcionariosProps[]>([]);
-  
-
-  useEffect(() => {
-    onSnapshot(databaseRef, async usuarios => {
-
-      let usuariosList = usuarios.docs.map(usuario => {
-        return usuario.data() as funcionariosProps;
-      });
-
-      setCadastros(usuariosList) 
-    } )
-  }, [])
+export default function Painel() {
     
-  return ( 
-    <>
-      <Head>
-        <title>Inicio | DashBoard</title>
-      </Head>
-      <div className={styles.background}>
-        <section className={styles.section}>
-          {cadastros?.map((cadastro, i) => (
-        
-                <div key={i} className={styles.card}>
-                    <div className={styles.content}>
-                      <div className={styles.imgBx}><img src={cadastro.image} alt="img" />
-                      </div>
-                      <div className={styles.contentBx}>
-                          <h3>
-                            {cadastro.nome}
-                          </h3>
-                          <p>
-                            {cadastro.cargo}
-                          </p>
-                          
-                      </div>
+    return (
+        <>
+            <Head>
+                <title>Painel</title>
+            </Head>
+            <section className={styles.section}>
+                <div className={styles.menuBar}>
+                    <BsRecordCircleFill />
+                </div>
+                <div className={styles.container}>
+                    <div className={styles.ShowInput}>
+                        <AddDocs />
                     </div>
-                    <div className={styles.flags}>
-                    </div>
-                </div>)
-        
-          )}
-        </section>
-      </div>
-      <Footer />
-    </>
-  )
+                    <GetDocs />
+                </div>
+                <div className={styles.showInfoBar}>
+                    <InfoBar />
+                </div>
+            </section>
+        </>
+    )
 }
