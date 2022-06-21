@@ -3,10 +3,21 @@ import { AddDocs } from '../components/AddDocs';
 import { GetDocs } from '../components/GetDocs';
 import { InfoBar } from '../components/InfoBar';
 import { BsRecordCircleFill } from 'react-icons/bs';
+import { AiOutlineLine } from 'react-icons/ai';
 
 import styles from './styles.module.scss';
+import { useState } from 'react';
 
 export default function Painel() {
+    const [ openNoteCard, setOpenNoteCard ] = useState('')
+
+    const handleOpenNoteCard = () => {
+        if (openNoteCard == '') {
+            setOpenNoteCard(styles.openNoteCard)
+        } else {
+            setOpenNoteCard('')
+        }
+    }
     
     return (
         <>
@@ -23,7 +34,14 @@ export default function Painel() {
                     </div>
                     <GetDocs />
                 </div>
-                <div className={styles.showInfoBar}>
+                
+                <div className={`${styles.showInfoBar} ${openNoteCard}`}>
+                    <div 
+                        onClick={handleOpenNoteCard} 
+                        className={styles.line}
+                    >
+                        <AiOutlineLine />
+                    </div>
                     <InfoBar />
                 </div>
             </section>

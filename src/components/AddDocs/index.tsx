@@ -5,29 +5,23 @@ import { useAddCardContext } from "../../context/addContext";
 import styles from "./styles.module.scss";
 
 export function AddDocs() {    
-    const [stylesEdit, setStylesEdit] = useState('')
-    const [stylesEdit2, setStylesEdit2] = useState('')  
+    const [ openAddCard, setOpenAddCard ] = useState('') 
     
     const {formFileImg} = useAddCardContext()
     const {setNome, setCharge, name, charge} = useAddCardContext()
- 
 
-    function hadleclickeEdit() {
-
-        if (stylesEdit == '') {
-            setStylesEdit(styles.editDown)
-            setStylesEdit2('')
-        }
-        if (stylesEdit !== '') {
-            setStylesEdit2(styles.editUp)
-            setStylesEdit('')
+    const handleOpenAddCard = () => {
+        if (openAddCard == '') {
+            setOpenAddCard(styles.openAddCard)
+        } else {
+            setOpenAddCard('')
         }
     }
 
     return (
         <>
             <div className={styles.section}>
-                <form onSubmit={formFileImg} className={ `${styles.form} ${stylesEdit} ${stylesEdit2}`}>
+                <form onSubmit={formFileImg} className={ `${styles.form} ${openAddCard}`}>
 
                     <input className={ styles.inputSendFiles} type="file" name="file" />
 
@@ -52,7 +46,7 @@ export function AddDocs() {
                 </form>
                 <div 
                     className={styles.addDocsEdit}
-                    onClick={hadleclickeEdit}>
+                    onClick={handleOpenAddCard}>
                     <MdLibraryAdd />
                 </div>
                 
