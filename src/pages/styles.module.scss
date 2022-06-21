@@ -48,8 +48,10 @@
         }
 
         .showInfoBar {
-            height: 100%;
-            width: auto;
+            max-width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
         }
 
         .container {

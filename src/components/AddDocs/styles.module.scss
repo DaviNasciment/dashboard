@@ -4,7 +4,7 @@
     .editDown {
         opacity: 1!important;
 
-        top: 4px!important;
+        top: 4px;
         margin-bottom: 1rem;
     }
     .editUp {
@@ -101,6 +101,7 @@
             height: 12rem;
             z-index: 5;
             box-shadow: 0px 0px 9px -4px black;
+            top: auto;
             bottom: 0;
             left: 0;
 
@@ -120,9 +121,17 @@
             
             top: auto;
             left: 0;
-            bottom: -50px;
+            bottom: -160px;
     
             transition: all 0.3s ease-in-out;
         }
+
+        .addDocsEdit {
+            svg {
+                font-size: 2rem;
+                cursor: pointer;
+            }
+        }
+        
     }
 }
